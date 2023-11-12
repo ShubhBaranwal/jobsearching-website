@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Navbar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+    <style>
+        body {
+
+            width: 100vw;
+            /* overflow: hidden; */
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar-nav {
+            margin-left: 70px;
+            font-size: 23px;
+        }
+
+        .navbar-nav li a {
+            margin-left: 1rem;
+        }
+
+
+        .btn1 {
+            padding: 10px 20px;
+            margin-right: 30px;
+            color: darkblue;
+
+        }
+
+        .btn2 {
+            padding: 10px 20px;
+            margin-right: 50px;
+            color: darkblue;
+            /* position: absolute; */
+            /* right: 20px; */
+
+        }
+
+        @media screen and (max-width:1252px) {
+
+            .btn1,
+            .btn2 {
+                display: none;
+            }
+        }
+
+        /* hero section */
+        .hero-row {
+            height: 600px;
+            background-color: lightgray;
+        }
+
+        .hero-heading {
+            font-size: 100px;
+            font-weight: bolder;
+            color: darkblue;
+            word-spacing: 2px;
+            margin-left: 70px;
+            margin-top: 80px;
+        }
+
+        .hero-btn {
+            display: flex;
+            /* gap: 30px; */
+            margin-left: 70px;
+            margin-top: 30px;
+        }
+
+        .hero-btn input {
+            width: 17rem;
+            height: 3.4rem;
+            border: none;
+            background-color: rgb(255, 255, 255);
+            padding: 20px 30px;
+            box-shadow: 2px 2px 5px gray;
+            border-radius: 10px;
+
+        }
+
+        ::placeholder {
+            /* font-weight: bolder; */
+            font-size: 20px;
+            color: palevioletred;
+        }
+
+        .hero-btn button {
+            width: 8rem;
+            box-shadow: 2px 2px 5px gray;
+            border: 2px solid rgb(54, 4, 4);
+            background-color: pink;
+            border-radius: 15px;
+
+        }
+
+        .hero-btn button:hover {
+            background-color: black;
+            color: pink;
+        }
+
+        .hero-right img {
+            border-radius: 30px;
+            ;
+        }
+
+        /* responsive for hero section */
+        @media screen and (max-width:768px) {
+            .hero-right {
+                display: none;
+            }
+
+            .hero-right img {
+                display: none;
+            }
+
+            .hero-heading {
+                font-size: 50px;
+            }
+
+            .hero-btn input {
+                margin-bottom: 20px;
+            }
+
+            .hero-row {
+                height: 500px;
+            }
+
+            .hero-btn button {
+                margin-left: 50px;
+
+            }
+
+
+        }
+
+        @media screen and (max-width:992px) {
+            .hero-right {
+                display: none;
+            }
+
+            .hero-right img {
+                display: none;
+            }
+
+
+        }
+
+
+        /*  job card section */
+        #job-row1{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .button-value {
+            text-align: center;
+           width: 23%;
+            background-color: lightgreen;
+            box-shadow: 2px 2px 2px gray;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            font-size: 1.7rem;
+
+        }
+
+        .button-value:hover {
+            box-shadow: 3px 3px 31px gray;
+
+        }
+
+        .card img {
+            margin: auto;
+        }
+
+        .button-value h3:hover {
+            color: yellowgreen;
+        }
+
+        @media screen and (max-width:800px) {
+            .button-value{
+                font-size: 1.2em;
+            }
+        }
+        @media screen and (max-width:520px) {
+            .button-value{
+                font-size: 0.8em;
+            }
+        }
+
+        /* job section styling */
+        .job-section {
+            background-color: grey;
+            color: white;
+            box-shadow: 3px 3px 3px 3px rgb(121, 106, 106);
+        }
+
+        .job-btn {
+            padding: 8px 17px;
+            margin-bottom: 10px;
+            background-color: greenyellow;
+            color: darkblue;
+            border-radius: 20px;
+        }
+
+        .job-btn:hover {
+            background-color: darkblue;
+            color: yellow;
+        }
+
+        @media screen and (max-width:800px) {
+            .job-section .mid {
+                text-align: center;
+            }
+
+            .job-btn {
+                /* margin: auto; */
+                /* margin-left: 180px */
+                position: relative;
+                left: 35%;
+
+            }
+
+            .job-section img {
+                width: 50px;
+
+                position: relative;
+                left: 15%;
+            }
+        }
+
+        /* process part design */
+        .process-part {
+            height: 600px;
+        }
+
+        .process-part .col-md-3 {
+            border-radius: 20px;
+            height: 270px;
+        }
+
+        @media screen and (max-width:800px) {
+            .process-part {
+                height: 1100px;
+            }
+
+            .process-part .col-md-3 {
+                height: 270px;
+                width: 70%;
+            }
+        }
+
+        /* left form style */
+        .login-container {
+            /* border: 2px solid darkblue; */
+            box-shadow: 5px 5px 5px 0.9px rgb(185, 185, 233);
+        }
+
+        .form-login {
+            height: 350px;
+            /* border: 2px solid darkgreen; */
+        }
+
+        .form-login input {
+            width: 70%;
+            /* gap: 25px; */
+            margin-bottom: 10px;
+            margin: auto;
+            padding: 20px 30px;
+            color: darkblue;
+        }
+
+        .btn-login {
+            width: 30%;
+            color: wheat;
+            background-color: darkblue;
+
+        }
+
+        .btn-login:hover {
+            background-color: rgb(255, 183, 0);
+            color: darkblue;
+            font-size: 20px;
+        }
+
+        /* registeration box design */
+        /* .rgs-input{
+    width: 300px;
+} */
+
+        .form-register input {
+            /* display: flex; */
+            width: 40%;
+            color: white;
+            margin: 20px;
+            padding: 7px 46px;
+            background-color: rgb(50, 8, 88);
+        }
+
+        .rgs-btn {
+            margin-left: 33%;
+        }
+
+        .register {
+            box-shadow: 3px 3px 3px 3px rgb(9, 255, 0);
+            background-color: rgb(189, 255, 123);
+        }
+
+        @media screen and (max-width:800px) {
+
+
+            .form-register {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .form-register input {
+                width: 70%;
+                margin: auto;
+                margin-bottom: 8px;
+            }
+
+            .rgs-btn {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* job oppening banner */
+        .banner-img {
+            margin-left: 35%;
+        }
+
+        /* footer section style */
+        .footer {
+            background-color: rgb(2, 2, 63);
+            color: rgb(255, 255, 255);
+            height: 500px;
+        }
+
+        .footer-item {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-social-links {
+            color: white;
+            font-size: 20px;
+
+            background-color: rgb(2, 2, 63);
+        }
+
+        .footer-social-links img {
+            width: 5%;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width:990px) {
+            .footer {
+                height: 883px;
+            }
+
+            .footer-item {
+                /* margin-left: 32%; */
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .footer-social-links {
+                height: 100px;
+                align-items: center;
+                vertical-align: center;
+            }
+
+            .footer-social-links img {
+                width: 7%;
+                margin-top: 17px;
+                align-items: center;
+
+            }
+        }
+
+        @media screen and (max-width:700px) {
+            .footer-social-links img {
+                width: 60px;
+            }
+
+            .footer-social-links {
+                vertical-align: baseline;
+                padding: 20px 0px;
+                align-items: center;
+
+            }
+        }
+
+        #filter-btn-container label {
+            font-size: 20px;
+            background-color: black;
+            color: white;
+            padding: 20px;
+
+        }
+
+        .active {
+            background-color: red;
+            border: darkblue;
+            color: white;
+        }
+
+        .hide {
+            display: none;
+        }
+        .is-hidden { display: none; }
+       .searchboxinput{
+        width: 150px;
+       }
+       @media screen and (max-width:400px){
+
+       }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid ">
+
+        <div class="row ">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-dark" style="background: rgb(0, 0, 0);">
+                    <a href="" class="navbar-brand">
+
+                        <img src="logo123.png" class="img-fluid mt-1 logoji" alt="">
+                    </a>
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mynavbar">
+                        <ul class="navbar-nav   main-nav ">
+                            <li class="nav-item ">
+                                <a href="" class="nav-link text-warning">Home</a>
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a href="" class="nav-link dropdown-toggle text-warning " data-toggle="dropdown">
+                                    Employment Type
+                                </a>
+                                <div class="dropdown-menu bg-warning text-dark">
+                                    <a href="" class="dropdown-item ">Fresher / Professional</a>
+                                    <a href="" class="dropdown-item">For Internship</a>
+                                    <a href="" class="dropdown-item">Full Time Employment</a>
+                                    <a href="" class="dropdown-item">Consultant</a>
+                                    <a href="" class="dropdown-item">For Skill Dovelopment Program</a>
+                                </div>
+                            </li>
+
+
+
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-warning">About</a>
+                            </li>
+                            <li class="nav-item dropdown ">
+                                <a href="" class="nav-link dropdown-toggle text-warning " data-toggle="dropdown">
+                                    Services
+                                </a>
+                                <div class="dropdown-menu   bg-warning text-dark">
+                                    <a href="" class="dropdown-item"></a>
+                                    <a href="" class="dropdown-item">Resume Builder</a>
+                                    <a href="" class="dropdown-item">Profile Highlighter</a>
+                                    <a href="" class="dropdown-item">Career Coach</a>
+                                    <a href="" class="dropdown-item">Mock Interview</a>
+                                    <a href="" class="dropdown-item">Video Resume Builder</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-warning">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-warning">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="" class="nav-link text-warning">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <a class="btn btn-info btn-lg btn1" href="#register">Register</a>
+                    <a class="btn btn-info btn-lg btn2" href="#login">Login</a>
+                </nav>
+
+            </div>
+
+            <div class="row hero-row  ">
+                <div class="col-lg-8 hero-left col-md-12">
+                    <div class="display-1 hero-heading"> Find the <br>most exciting <br> startup jobs</div>
+                    <div class="hero-btn row">
+                        
+                        <div class="col"> <input type="search" 
+                            oninput="liveSearch()" 
+                            id="searchbox searchboxinput"    placeholder="job Title or keyword" id="job-title " ></div>
+                        <div class="col"></div>
+                        
+                    </div>
+
+                </div>
+                <div class="col hero-right">
+                    <img src="ben.jpg" width="100%" height="550px" alt="" class="mt-4">
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid bg-light mt-4 job-category">
+
+        <div class="row job-row " id="job-row1">
+
+            <button class="button-value" onclick="filterProduct('all')">all
+               
+            
+            </button>
+            <button class="button-value" onclick="filterProduct('IT-ITES')">IT-ITES</button>
+            <button class="button-value" onclick="filterProduct('TELECOM')">TELECOM</button>
+            <button class="button-value" onclick="filterProduct('AUTOMOBILE')">AUTOMOBILE</button>
+        </div>
+
+<div class="cate">
+
+</div>
+
+
+
+
+    </div>
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-4 filter" >
+                <h5>Job Type</h5>
+                <div class="checkbox">
+                    <label for="permanent">
+                        <input id="permanent" type="checkbox" rel="permanent" class="tofjob" onclick="change()" >
+                    permanent    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="FullTime">
+                        <input id="FullTime" type="checkbox" rel="FullTime" class="tofjob" onclick="change()" >
+                    FullTime    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="PartTime">
+                        <input id="PartTime" type="checkbox" rel="PartTime" class="tofjob" onclick="change()" >
+                        PartTime   </label>
+                </div>
+                <div class="checkbox">
+                    <label for="Remote">
+                        <input id="Remote" type="checkbox" rel="Remote" class="tofjob" onclick="change()" >
+                        Remote    </label>
+                </div>
+            </div>
+            <div class="col-4 filter " >
+                <h5>Experience</h5>
+                <div class="checkbox">
+                    <label for="1-2">
+                        <input id="1-2" type="checkbox" rel="1-2" class="exp" onclick="change()" >
+                    1-2    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="2-3">
+                        <input id="2-3" type="checkbox" rel="2-3" class="exp" onclick="change()" >
+                    2-3    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="3-4">
+                        <input id="3-4" type="checkbox" rel="3-4" class="exp" onclick="change()" >
+                    3-4    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="4-5">
+                        <input id="4-5" type="checkbox" rel="4-5" class="exp" onclick="change()" >
+                    4-5    </label>
+                </div>
+            </div>
+            <div class="col-4 filter" >
+                <h5>Posted Within</h5>
+                <div class="checkbox">
+                    <label for="Today">
+                        <input id="Today" type="checkbox" rel="Today" class="dop" onclick="change()" >
+                        Today    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="Last-2-days">
+                        <input id="Last-2-days" type="checkbox" rel="Last-2-days" class="dop" onclick="change()" >
+                        Last 2 days    </label>
+                </div>
+                
+                <div class="checkbox">
+                    <label for="Last-3-days">
+                        <input id="Last-3-days" type="checkbox" rel="Last-3-days" class="dop" onclick="change()" >
+                        Last 3 days    </label>
+                </div>
+                <div class="checkbox">
+                    <label for="Last-4-days">
+                        <input id="Last-4-days" type="checkbox" rel="Last-4-days" class="dop" onclick="change()" >
+                        Last 4 days    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <div class="container job-listing-page products">
+
+
+    </div>
+    </div>
+    <div class="container-fluid bg-dark process-part mt-5">
+        <div class="row  justify-content-around ">
+            <h5 class="text-center text-danger mt-3">APPLY PROCESS</h5>
+            <h1 class="text-center text-light">How it's works?</h1>
+
+            <div class="col-md-3 bg-light mt-5 text-center">
+                <img src="icons8-account-30.png" alt="" width="18% " class="m-3" >
+                <h1>1. Create Account</h1>
+                <p class="">it's very easy to open an account and start your journey.</p>
+
+            </div>
+
+            <div class="col-md-3 bg-light mt-5 text-center">
+                <img src="icons8-search-account-64.png" alt="" width="18%" class="m-3">
+                <h1>2. Complete your profile.</h1>
+                <p class=""> Complete your profile with all the info to get attention or client</p>
+
+            </div>
+            <div class="col-md-3  bg-light mt-5 text-center">
+                <img src="icons8-clipboard-approve-64.png" alt="" width="18%" class="m-3">
+                <h1>3. Apply job or hire</h1>
+                <p>Apply & get your preferable jobs with all the requirements and get it</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 0" id="login">
+        <div class="row search-job bg-light">
+            <div class="col-lg-6 col-md-12 bg-info login-container">
+                <div class="form-login d-flex flex-column">
+                    <h1 class="text-center">Log in </h1>
+                    <div class="form-login-input flex-column d-flex">
+                        <input type="text" placeholder="Email/Phone">
+                        <input type="password" placeholder="Password">
+                        <button class="btn-login align-self-center mt-4 py-3">LOGIN</button>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-lg-6 register col-md-12" id="register">
+                <h1 class="text-center">Register</h1>
+                <div class="form-register">
+                    <input type="text" placeholder="Enter your name" class="rgs-input">
+                    <input type="text" placeholder="Enter your Qualification" class="rgs-input">
+                    <input type="text" placeholder="Enter your Skill" class="rgs-input">
+                    <input type="number" placeholder="Mobile Number" class="rgs-input">
+                    <input type="email" placeholder="Enter your Email">
+                    <input type="password" placeholder="Enter your password">
+                    <br>
+                    <button class="btn-login rgs-btn py-2 -center">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container-fluid mt-5">
+        <div class="row wrapper bg-gradient justify-content-around">
+            <div class="customerCard col-8 bg-dark">
+                
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-4">
+        <div class="row bg-primary justify-content-around">
+            <div class="col-md-3 mt-4">
+
+                <img src="job-description.png" alt="" width="30%" class="banner-img ps-4">
+                <h1 class="text-light text-center">180 <br> Job Opening</h1>
+
+            </div>
+            <div class="col-md-3 mt-4">
+
+                <img src="enterprise_993891.png" alt="" width="30%" class="banner-img ps-2">
+                <h1 class="text-light text-center">20<br> Company</h1>
+
+            </div>
+            <div class="col-md-3 mt-4">
+
+                <img src="cv_8576722.png" alt="" width="30%" class="banner-img ps-2">
+                <h1 class="text-light text-center">50 <br> Resume</h1>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- footer section -->
+
+    <div class="container-fluid  mt-0 ">
+        <div class="row footer justify-content-around align-content-center">
+            <div class="col-lg-2 footer-item col-md-6 col-sm-12">
+                <h2>CANDIDATE</h2>
+                <p>Search Jobs</p>
+                <p>Update Your Resume</p>
+                <p>Log In</p>
+            </div>
+            <div class="col-lg-2 footer-item col-md-6 col-sm-12">
+                <h2>EMPLOYER</h2>
+                <p>Employer Login</p>
+                <p>Register With Us</p>
+                <p>Job Posting</p>
+                <p>Resume Database</p>
+            </div>
+
+            <div class="col-lg-2 footer-item col-md-6 col-sm-12">
+                <h2>REACH US</h2>
+                <p>National Skill Development Corporation
+                    5th Floor, Kaushal Bhawan,
+                    New Moti Bagh, New Delhi 110023
+
+                </p>
+                <p>18001239626 | +91 - 8800055555</p>
+                contact@nsdcjobx.com
+            </div>
+            <div class="col-lg-2 footer-item col-md-6 col-sm-12">
+                <h2>IMPORTANT LINKS</h2>
+                <p>View Project</p>
+                <p>Contact Us</p>
+                <p>Testimonial</p>
+                <p>Proparties</p>
+                <p>Support</p>
+            </div>
+        </div>
+        <div class="row footer-social-links justify-content-center">
+            Connect With Us-
+            <img src="fb.png" alt="">
+            <img src="tw.png" alt="">
+            <img src="instagram.png" alt="">
+            <img src="email.png" alt="">
+        </div>
+        <div class="row bg-dark text-center">
+
+            <p class="text-center text-light h5 py-4"> Copyright 2023-NSDC JobX- All rights Reserved</p>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <!-- <script src="index22.js"></script> -->
+</body>
+
+</html>
